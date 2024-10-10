@@ -21,7 +21,7 @@ struct Main: View {
                         Text("HH:MM:SS")
                             .font(.largeTitle)
                             .foregroundColor(.white)
-                            //.padding(.leading, 20) // 文字左对齐
+                        //.padding(.leading, 20) // 文字左对齐
                         
                         Spacer() // 添加间隔符，让按钮靠右对齐
                         
@@ -49,9 +49,19 @@ struct Main: View {
                 }
             }
             .navigationBarTitle("今天的日期")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        //Actions
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
         }
     }
 }
+
 
 #Preview {
     Main()
