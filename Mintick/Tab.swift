@@ -14,7 +14,7 @@ struct Tab: View {
             Main()
             .tabItem {
                 Text("记录")
-                Image(systemName: "house.fill")
+                Image(systemName: "pencil.and.outline")
                     .renderingMode(.template)
             }
             .tag(0)
@@ -24,7 +24,7 @@ struct Tab: View {
                     .navigationTitle("总览")
             }
             .tabItem {
-                Label("总览", systemImage: "person.fill")
+                Label("总览", systemImage: "chart.pie.fill")
             }
             .tag(1)
             
@@ -35,7 +35,7 @@ struct Tab: View {
             }
             .tabItem {
                 Text("设置")
-                Image(systemName: "info.circle")
+                Image(systemName: "gear")
             }
             .tag(2)
         }
