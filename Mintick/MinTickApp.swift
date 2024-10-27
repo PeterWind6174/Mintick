@@ -8,4 +8,3 @@ struct MinTickApp: App {
         }
     }
 }
-//test
