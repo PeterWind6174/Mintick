@@ -37,28 +37,26 @@ struct HomePage: View {
                         .frame(width: 280)
                         .padding(.horizontal)
                     }
-                    
-                    
-                    .navigationTitle("今天的日期")
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button(action: {
-                                isShowingButtonEditor = true  // 打开弹窗
-                            }) {
-                                Image(systemName: "plus")
-                            }
-                        }
-                    }
-                    // 弹出 ButtonEditor 视图
-                    .sheet(isPresented: $isShowingButtonEditor) {
-                        ButtonEditor()
+                }
+            }
+            .navigationTitle("今天的日期")  // 移动到这里
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        isShowingButtonEditor = true  // 打开弹窗
+                    }) {
+                        Image(systemName: "plus")
                     }
                 }
+            }
+            // 弹出 ButtonEditor 视图
+            .sheet(isPresented: $isShowingButtonEditor) {
+                ButtonEdit()
             }
         }
     }
 }
-// ButtonEditor 视图
+
 
 #Preview {
     HomePage()
