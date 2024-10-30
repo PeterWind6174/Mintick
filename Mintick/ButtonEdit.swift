@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ButtonEditor: View {
+struct ButtonEditor1: View {
     @Environment(\.dismiss) var dismiss  // 用于控制弹窗关闭
     
     var body: some View {
@@ -8,12 +8,20 @@ struct ButtonEditor: View {
             VStack {
                 Text("这是 ButtonEditor 视图")
                     .font(.title)
+                    .padding(.bottom, 20)
+                
+                Button("保存") {
+                    print("保存按钮点击")
+                }
+                .buttonStyle(.borderedProminent)  // 美化按钮
             }
             .padding()
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("取消") {
-                        dismiss()
+                        withAnimation {
+                            dismiss()  // 增加动画效果
+                        }
                     }
                 }
                 
@@ -30,5 +38,3 @@ struct ButtonEditor: View {
 #Preview {
     ButtonEditor()
 }
-
-
