@@ -6,18 +6,13 @@ struct ButtonEdit: View {
     var body: some View {
         NavigationStack {
             VStack {
-                HStack {
-                    Text("输入名称：")
-                        .font(.title)
-                        .padding()
-                    Spacer()
-                }
                 
                 // 保存按钮
                 Button("保存") {
                     print("保存的名称")
                 }
                 .buttonStyle(.borderedProminent)
+                .navigationTitle("输入名称：")
                 Spacer()
             }
             .padding()
