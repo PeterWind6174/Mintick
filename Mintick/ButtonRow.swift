@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ButtonRow: View {
     var thisButton: Pubbuttons
+    var deleteAction: () -> Void  // 删除按钮的操作
     
     var body: some View {
         ZStack {
@@ -12,11 +13,20 @@ struct ButtonRow: View {
             
             Text(thisButton.name)
                 .font(.largeTitle)
-                .foregroundColor(.white) // 根据背景色调整文本颜色
+                .foregroundColor(.white)
+        }
+        .contextMenu {
+            Button(role: .destructive) {
+                deleteAction()
+            } label: {
+                Label("删除", systemImage: "trash")
+            }
         }
     }
 }
 
 #Preview {
-    ButtonRow(thisButton: Pubbuttons(name: "Example Button"))
+    ButtonRow(thisButton: Pubbuttons(name: "Example Button")) {
+        // 示例删除操作
+    }
 }

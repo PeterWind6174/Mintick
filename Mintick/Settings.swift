@@ -4,18 +4,18 @@ struct Settings: View {
     var body: some View {
         NavigationStack{
             
-                List{
+            List{
+                
+                NavigationLink{
+                    Setting1()
+                        .navigationTitle("设置1")
+                } label : {
+                    Image(systemName: "text.document")
+                        .symbolRenderingMode(.multicolor)
+                    Text("设置1")
                     
-                    NavigationLink{
-                        Setting1()
-                            .navigationTitle("设置1")
-                    } label : {
-                        Image(systemName: "text.document")
-                            .symbolRenderingMode(.multicolor)
-                        Text("设置1")
-                        
-                    }                    
                 }
+            }
             
             .navigationTitle("设置")
         }

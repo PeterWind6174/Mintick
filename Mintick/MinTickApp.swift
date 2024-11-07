@@ -6,9 +6,9 @@ struct MinTickApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-               .environmentObject(data)
+                .environmentObject(data)
         }
-     
+        
         
     }
 }
