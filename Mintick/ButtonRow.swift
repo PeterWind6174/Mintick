@@ -7,7 +7,7 @@ struct ButtonRow: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .fill(Color.green)
+                .fill(Color.blue)
                 .frame(height: 80)
                 .padding(.horizontal)
             
